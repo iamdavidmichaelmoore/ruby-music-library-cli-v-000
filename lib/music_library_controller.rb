@@ -71,9 +71,9 @@ class MusicLibraryController
     result = Genre.find_by_name(genre_req)
     if result
       sorted = result.songs.sort_by {|song| song.name}
-      sorted.each_with_index(1) {|song, index|
+      sorted.each_with_index(1) do |song, index|
         puts "#{index}. #{song.artist.name} - #{song.name}"
-      }
+      end
     end
   end
 
