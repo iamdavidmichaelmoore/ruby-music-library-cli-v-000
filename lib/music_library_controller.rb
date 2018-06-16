@@ -34,16 +34,16 @@ class MusicLibraryController
   # CLI Methods
   def list_songs
     sorted_songs = Song.all.sort_by {|song| song.name}
-    sorted_songs.each_with_index {|song, index|
+    sorted_songs.each_with_index do |song, index|
       puts "#{index+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-    }
+    end
   end
 
   def list_artists
     sorted_artists = Artist.all.sort_by {|artist| artist.name}.uniq
-    sorted_artists.each_with_index {|artist, index|
+    sorted_artists.each_with_index do |artist, index|
       puts "#{index+1}. #{artist.name}"
-    }
+    end
   end
 
   def list_genres
