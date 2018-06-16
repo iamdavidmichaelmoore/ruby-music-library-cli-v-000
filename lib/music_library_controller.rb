@@ -81,10 +81,10 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     selected_song_number = gets.chomp.to_i
     sorted = Song.all.sort_by {|song| song.name}
-    sorted.each_with_index(1) {|song, song_number|
+    sorted.each_with_index(1) do |song, song_number|
       if song_number == selected_song_number
         puts "Playing #{song.name} by #{song.artist.name}"
       end
-    }
+    end
   end
 end
