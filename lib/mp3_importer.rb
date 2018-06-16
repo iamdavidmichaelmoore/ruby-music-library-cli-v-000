@@ -8,7 +8,8 @@ class MusicImporter
 
   # Instance Methods
   def files
-    file_list = Dir.foreach(path) do |file|
+    file_list = []
+    Dir.foreach(path) do |file|
       if file.end_with?("mp3")
         file_list << file
       end
